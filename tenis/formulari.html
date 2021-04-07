@@ -1,0 +1,102 @@
+
+<html lang="en">
+  <center>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+      <title>Pacman</title>
+
+      <link rel="stylesheet" type="text/css" href="css/styleFormulari.css" />
+
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+      <script src="js/lib/p5.js"></script>
+      <script src="js/lib/addons/p5.sound.js"></script>
+
+     <script src="js/gameObject.js" type="text/javascript"></script>
+     <script src="js/roca.js" type="text/javascript"></script>
+     <script src="js/menjar.js" type="text/javascript"></script>
+     <script src="js/grape.js" type="text/javascript"></script>
+     <script src="js/pacman.js" type="text/javascript"></script>
+    <script src="js/maze.js" type="text/javascript"></script>
+    <script>
+              var partida;
+              function guardarDatos() {
+                var nom = document.getElementById("nombre").value;
+                  window.localStorage.setItem("nombre",nom);
+                  var email = document.getElementById("email").value;
+                  window.localStorage.setItem("email",email);
+                  partida = $("input[name='dificultat']:checked").val();
+                  window.localStorage.setItem("dificultat",partida);
+                  if (nom && email){
+                  window.location.href = window.location.href.replace("formulari.html","index.html");
+                }
+
+
+
+
+              }
+
+
+        /*      function recuperarDatos() {
+                  if ((localStorage.nombre != undefined) && (localStorage.email != undefined)) {
+                      document.getElementById("datos").innerHTML = "Nombre: " + localStorage.nombre + " Email: " + localStorage.password;
+                  } else {
+                      document.getElementById("datos").innerHTML = "No has introducido tu nombre o tu email";
+                  }
+              }*/
+    </script>
+  </head>
+  <body>
+    <div id="demotext">PACMAN
+
+    </div>
+    <div id="header">
+
+        <img src="images/roca.bmp">
+        <img src="images/food.bmp">
+        <img src="images/grape.png">
+        <img src="images/pacman.bmp">
+        <img src="images/pacmanesquerra.bmp">
+        <img src="images/pacmanUp.bmp">
+        <img src="images/pacmanDown.bmp">
+
+
+
+  		</div>
+    <div id="joc">
+    </div>
+
+
+    <form action="/index.html">
+     <fieldset>
+      <legend>Formulari del Pacman:</legend>
+      <label for="nombre">Nom:</label>
+      <input type="text" id="nombre" ><br><br>
+      <label for="email">Email:</label>
+      <input type="text" id="email" ><br><br>
+      <label for="fname">Dificultat:</label>
+      <br>
+      <form id="myForm">
+      <input type="radio" name="dificultat" id="facil" value="facil">
+       <label for="facil">Facil</label>
+       <input type="radio" name="dificultat" id="normal" value="normal">
+     <label for="normal">Normal</label>
+      	 <input type="radio" name="dificultat" id="dificil" value="dificil">
+      <label for="dificil">Dificil</label>
+    </form>
+    	<br>
+
+
+      <input class="button" type="button"  onclick="guardarDatos()" value="Enviar">
+
+     </fieldset>
+    </form>
+	<h1>Fet per Pol Júlvez Torà</h1>
+
+  </body>
+      </center>
+</html>
