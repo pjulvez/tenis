@@ -12,7 +12,6 @@ var ball = new Ball(100,300);
 var xBallChange = 5;
 var yBallChange = 5;
 
-var ballGame = new Ball();
 
 // Player1('jugador1',p);
 p.preload = function() {
@@ -54,7 +53,7 @@ p.preload = function() {
       ballSprite.addAnimation("walker",ballimatge);
       ball.crearSpriteBall(ballSprite);
 
-
+      ball.move(p);
 
 
 
@@ -67,8 +66,7 @@ p.preload = function() {
 
           p.background(fontsimatge);
           p.drawSprites();
-          ball.moveBall();
-      ;
+
           switch (p1.playerSprite.direction) {
 
       case 1:
