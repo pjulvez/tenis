@@ -1,14 +1,24 @@
-class Player1 extends GameObject
+class Player
 {
-  constructor(coordX,coordY){
-    super();
-    this.coordX=coordX;
-    this.coordY=coordY;
-    this.direction=0;
-    this.lives = 3;
+  constructor(str,p){
     this.speed = 32;
-    this.playerSprite = {};
-    
+    if(str == "jugador1"){
+      this.playerSprite = p.createSprite(100,200,200,100);
+      this.playerSprite.addAnimation('walker','images/walk0002.png',
+                                    'images/walk0003.png', 'images/walk0004.png',
+                                    'images/walk0005.png', 'images/walk0006.png');
+      this.punts = 0;
+
+    }
+    if(str == "jugador2"){
+      this.playerSprite = p.createSprite(1000,500,200,100);
+      this.playerSprite.addAnimation('walker','images/caminar1.png','images/caminar2.png','images/caminar3.png', 'images/caminar4.png',
+                                   'images/caminar5.png', 'images/caminar6.png','images/caminar7.png', 'images/caminar8.png',
+                                    'images/caminar9.png', 'images/caminar10.png');
+      this.punts = 0;
+
+    }
+
 
 
   }
@@ -17,6 +27,7 @@ class Player1 extends GameObject
           this.playerSprite.position.x=  this.playerSprite.position.x + this.speed;
           if(this.playerSprite.position.x  > 516){
             this.playerSprite.position.x = 516;
+            console.log(this.playerSprite.position);
 
           }
   }
@@ -60,9 +71,7 @@ class Player1 extends GameObject
 
   }
 
-  crearSprite(sprite){
-      this.playerSprite = sprite;
-  }
+
 
 
 }
