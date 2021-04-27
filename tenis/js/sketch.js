@@ -31,7 +31,7 @@ p.preload = function() {
     p.setup = function() {
       p.createCanvas(1100,700);
       ball.move(p);
-  //    ball.colliderPlayer(playerSprite);
+      ball.colliderPlayer(p,p1);
     }
 
     p.draw = function(){
