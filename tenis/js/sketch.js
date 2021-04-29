@@ -40,6 +40,10 @@ p.preload = function() {
           ball.bordes(p);
           ball.colliderPlayer(p,p1);
           ball.colliderPlayer(p,p2);
+          document.getElementById("punts").innerHTML = p1.punts;
+          p1.punts++;
+
+
     }
 
 p.keyPressed = function(){
