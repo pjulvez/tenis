@@ -45,20 +45,11 @@ class Ball
   }
 
   colliderPlayer(p,player){
-    this.ballSprite.collide(player.playerSprite,rebotarBola);
+    this.ballSprite.bounce(player.playerSprite);
   }
 
 
 
-}
-function rebotarBola(){
-//Igual es millor ficar restitution a 1, i nosaltres canviar la velocitat de forma "manual"
-   if ( ballSprite.position.x < player1.playerSprite.position.x){
-     this.ballSprite.velocity.x =  this.ballSprite.velocity.x *-1;
-     console.log("entra")
-   }
-   else if (ballSprite.position.x >= player1.spritePlayer.position.x){
 
-     this.ballSprite.velocity.x =  this.ballSprite.velocity.x *-1;
-   }
+
  }

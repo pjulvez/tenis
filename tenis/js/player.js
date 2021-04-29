@@ -2,12 +2,13 @@ class Player
 {
   constructor(str,p){
     this.speed = 32;
+    this.punts = 0
     if(str == "jugador1"){
       this.playerSprite = p.createSprite(100,200,200,100);
       this.playerSprite.addAnimation('walker','images/walk0002.png',
                                     'images/walk0003.png', 'images/walk0004.png',
                                     'images/walk0005.png', 'images/walk0006.png');
-      this.punts = 0;
+      this.playerSprite.immovable = true;
 
     }
     if(str == "jugador2"){
@@ -15,7 +16,7 @@ class Player
       this.playerSprite.addAnimation('walker','images/caminar1.png','images/caminar2.png','images/caminar3.png', 'images/caminar4.png',
                                    'images/caminar5.png', 'images/caminar6.png','images/caminar7.png', 'images/caminar8.png',
                                     'images/caminar9.png', 'images/caminar10.png');
-      this.punts = 0;
+      this.playerSprite.immovable = true;
 
     }
 

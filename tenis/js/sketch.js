@@ -31,13 +31,15 @@ p.preload = function() {
     p.setup = function() {
       p.createCanvas(1100,700);
       ball.move(p);
-      ball.colliderPlayer(p,p1);
+      //ball.colliderPlayer(p,p1);
     }
 
     p.draw = function(){
           p.background(fontsimatge);
           p.drawSprites();
           ball.bordes(p);
+          ball.colliderPlayer(p,p1);
+          ball.colliderPlayer(p,p2);
     }
 
 p.keyPressed = function(){
