@@ -1,0 +1,103 @@
+
+<html lang="en">
+  <center>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+      <title>Tennis</title>
+      <script src="js/lib/p5.js"></script>
+      <script src="js/lib/p5.play.js"></script>
+      <script src="js/ball.js" type="text/javascript"></script>
+      <script src="js/player.js" type="text/javascript"></script>
+      <script src="js/gameObject.js" type="text/javascript"></script>
+
+    
+      <script>
+              var partida;
+              function guardarDatos() {
+                var nom = document.getElementById("nombre").value;
+                  window.localStorage.setItem("nombre",nom);
+                  var email = document.getElementById("email").value;
+                  window.localStorage.setItem("email",email);
+                  if (nom && email){
+                  window.location.href = window.location.href.replace("formulari.html","index.html");
+                }
+
+
+
+
+              }
+
+
+        /*      function recuperarDatos() {
+                  if ((localStorage.nombre != undefined) && (localStorage.email != undefined)) {
+                      document.getElementById("datos").innerHTML = "Nombre: " + localStorage.nombre + " Email: " + localStorage.password;
+                  } else {
+                      document.getElementById("datos").innerHTML = "No has introducido tu nombre o tu email";
+                  }
+              }*/
+    </script>
+      <link rel="stylesheet" type="text/css" href="css/styleFormulari.css" />
+</head>
+  <body>
+    <div id="demotext">TENNIS GAME
+
+    </div>
+    <div id="header">
+
+        <img src="js/images/ball.png">
+        <img src="js/images/ball2.png">
+        <img src="js/images/ball3.png">
+        <img src="js/images/ball4.png">
+        <img src="js/images/ball5.png">
+        <img src="js/images/ball6.png">
+        <img src="js/images/ball.png">
+
+
+
+  		</div>
+    <div id="joc">
+    </div>
+
+
+    <form action="/index.html">
+     <fieldset>
+      <legend>Formulari del partit de tennis:</legend>
+      <label for="nombre">Nom:</label>
+      <input type="text" id="nombre" ><br><br>
+      <label for="apellidos">Apellidos:</label>
+      <input type="text" name="apellidos" id="apellidos" /><br><br>
+      <label for="email">Email:</label>
+      <input type="text" id="email" ><br><br>
+      <label for="edad">Edad:</label>
+      <input name="edad" type="text" id="edad" maxlength="3" /><br><br>
+      <label for="nif">NIF:</label>
+      <input name="nif" type="text" id="nif" /><br><br>
+      <label for="provincia">Provincia:</label>
+      <select name="provincia" id="provincia">
+        <option value="0" selected="selected">Seleccione Provincia</option>
+        <option value="B">Barcelona</option>
+        <option value="G">Girona</option>
+        <option value="L">Lleida</option>
+    	<option value="T">Tarragona</option>
+      </select><br><br>
+      <label for="fecha">Fecha Nacimiento:</label>
+      <input name="fecha" type="text" id="fecha" /><br><br>
+      <label for="telefono">Teléfono:</label>
+      <input name="telefono" type="text" id="telefono" maxlength="9"/><br><br>
+      <label for="hora">Hora de visita:</label>
+      <input name="hora" type="text" id="hora" /><br><br>
+    	<br>
+      <input class="button" type="reset" name="limpiar" id="button" value="Limpiar" />
+      <input class="button" type="button"  onclick="guardarDatos()" value="Enviar">
+      <div id="errores"></div>
+      <div id="intentos"></div>
+     </fieldset>
+       </form>
+
+
+  </body>
+      </center>
+</html>
